@@ -1,0 +1,27 @@
+<%- include('partial/header') %>
+<div class='ui main text container segment'>
+	<div class='ui hude header'>
+		<i class='chess icon'></i>EDIT <%= blog.title %>
+	</div>
+	<form class='ui form'action='/blogs/<%= blog._id%>?_method=PUT' method='POST'>
+		<div class="field">
+			<label>Title</label>
+			<input type='text' name='blog[title]' value="<%= blog.title%>">
+	  	</div>
+		<div class="field">
+			<label>URL</label>
+			<input type='text' name='blog[image]' value="<%= blog.image%>">
+	  	</div>
+		<div class="field">
+			<label>Views</label>
+			<textarea name='blog[body]'><%= blog.body %></textarea>
+	  	</div>
+		<div class="ui buttons">
+		  <button onclick='location.href="/" ' class="ui button">Cancel</button>
+		  <div class="or"></div>
+		  <button class="ui positive button" type='submit'>Save</button>
+		</div>
+	</form>
+</div>
+
+<%- include('partial/footer') %>

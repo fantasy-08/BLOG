@@ -1,0 +1,31 @@
+<%- include('partial/header') %>
+
+<div class='ui main text container'>
+	<div class='ui huge header'>
+		All Blog -
+	</div>
+	<div class='ui top attached segment '>
+		<div class='ui divided items'>
+			<% bg.forEach(function(bgg){ %>
+			<div class='item'>
+				<div class='image'>
+					<img src='<%= bgg.image %>'>
+				</div>
+				<div class='content'>
+					<h1><%= bgg.title %></h1>
+					<div class='meta'>
+						<span><%=bgg.created.toDateString()%></span>
+					</div>
+					<div class='description'>
+						<p><%- bgg.body.substring(0,100)%> ...</p>
+					</div>
+					<div class='extra'>
+						<a class='ui floated basic violet button'href="/blogs/<%= bgg._id %>">Read More
+						<i class='right chevron icon'></i></a>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+		</div>
+	</div>
+</div>

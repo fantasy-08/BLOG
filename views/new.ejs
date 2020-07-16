@@ -1,0 +1,27 @@
+<%- include('partial/header') %>
+<div class='ui main text container segment'>
+	<div class='ui hude header'>
+		<i class='chess icon'></i>NEW BLOG!
+	</div>
+	<form class='ui form'action='/blogs' method='POST'>
+		<div class="field">
+			<label>Title</label>
+			<input type='text' name='blog[title]' placeholder='Title'>
+	  	</div>
+		<div class="field">
+			<label>URL</label>
+			<input type='text' name='blog[image]' placeholder='Image URL'>
+	  	</div>
+		<div class="field">
+			<label>Views</label>
+			<textarea name='blog[body]'></textarea>
+	  	</div>
+		<div class="ui buttons">
+		  <button onclick='location.href="/" ' class="ui button">Cancel</button>
+		  <div class="or"></div>
+		  <button class="ui positive button" type='submit'>Save</button>
+		</div>
+	</form>
+</div>
+
+<%- include('partial/footer') %>
